@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navItems = (
@@ -44,8 +44,55 @@ const Navbar = () => {
           </div>
           <a className="btn btn-ghost text-xl text-white">Uniting Volunteers</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white">{navItems}</ul>
+        {/* <div className="navbar-center hidden lg:flex">
+          <ul
+            className="menu menu-horizontal
+          px-1 text-white"
+          >
+            {navItems}
+          </ul>
+        </div> */}
+        <div className="navbar-center hidden  lg:flex">
+          <ul className="menu space-x-8 menu-horizontal px-1">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-white-600 border-2 border-sky-500 hover:bg-sky-500 font-bold"
+                    : "font-bold text-white"
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/volunteer"
+                className={({ isActive }) =>
+                  isActive
+                    ? " border-2 border-sky-500 hover:bg-sky-500 font-bold text-white"
+                    : "font-bold text-white"
+                }
+              >
+                Need Volunteer
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive
+                    ? "  border-2 border-sky-500 hover:bg-sky-500 font-bold text-white "
+                    : "font-bold text-white"
+                }
+              >
+                Login
+              </NavLink>
+            </li>
+          </ul>
         </div>
         <div className="navbar-end">
           <a className="btn">Button</a>

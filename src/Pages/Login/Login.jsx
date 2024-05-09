@@ -93,7 +93,7 @@ const Login = () => {
                 </button>
               </span>
               <span>
-                <button onClick={() => handleLogin(gitHubLogin)}>
+                <button onClick={() => handleSocialLogIn(gitHubLogin)}>
                   <FaGithub />
                 </button>
               </span>
