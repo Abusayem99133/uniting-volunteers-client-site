@@ -1,11 +1,36 @@
 import { Link } from "react-router-dom";
 import login from "../../assets/image/login-img.jpg";
+import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(name, photo, email, password);
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch();
+  };
   return (
     <div>
+      <Helmet>
+        <title>Register-page</title>
+      </Helmet>
       <div className="flex w-full p-5 bg-blue-600">
         <div className="w-1/2">
-          <form className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
+            <h1 className="text-4xl text-white text-center shadow-sm">
+              Register Now
+            </h1>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
