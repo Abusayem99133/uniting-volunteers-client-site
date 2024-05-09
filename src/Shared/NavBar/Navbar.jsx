@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { AuthContext } from "../../Provider/AuthProvider";
+import profile from "../../assets/image/imgbin-computer-icons-avatar-user-login-avatar-man-wearing-blue-shirt-illustration-mJrXLG07YnZUc2bH5pGfFKUhX.jpg";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navItems = (
     <>
       <li>
@@ -44,14 +47,7 @@ const Navbar = () => {
           </div>
           <a className="btn btn-ghost text-xl text-white">Uniting Volunteers</a>
         </div>
-        {/* <div className="navbar-center hidden lg:flex">
-          <ul
-            className="menu menu-horizontal
-          px-1 text-white"
-          >
-            {navItems}
-          </ul>
-        </div> */}
+
         <div className="navbar-center hidden  lg:flex">
           <ul className="menu space-x-8 menu-horizontal px-1">
             <li>
@@ -59,7 +55,7 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-white-600 border-2 border-sky-500 hover:bg-sky-500 font-bold"
+                    ? "text-white border-2 border-sky-500 hover:bg-sky-500 font-bold"
                     : "font-bold text-white"
                 }
               >
@@ -80,7 +76,7 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
@@ -91,12 +87,50 @@ const Navbar = () => {
               >
                 Login
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
-          <h2 className="ml-2 text-white">My Profile</h2>
+          <div className="mt-20 -ml-5  md:ml-0 md:mt-0  navbar-end">
+            {user?.email ? (
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10">
+                    <img
+                      className="rounded-full"
+                      alt="user photo"
+                      src={user?.photoURL || profile}
+                    />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <button className="btn btn-sm btn-ghost">
+                      {user?.displayName || "User Name not found"}
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => logOut()}
+                      className="btn btn-sm btn-ghost"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-sm btn-ghost text-white">
+                  Login
+                </button>
+              </Link>
+            )}
+          </div>
+          <h2 className=" text-white">My Profile</h2>
         </div>
       </div>
     </div>
