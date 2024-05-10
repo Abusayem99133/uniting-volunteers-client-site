@@ -75,19 +75,6 @@ const Navbar = () => {
                 Need Volunteer
               </NavLink>
             </li>
-
-            {/* <li>
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive
-                    ? "  border-2 border-sky-500 hover:bg-sky-500 font-bold text-white "
-                    : "font-bold text-white"
-                }
-              >
-                Login
-              </NavLink>
-            </li> */}
           </ul>
         </div>
         <div className="mt-20 -ml-5  md:ml-0 md:-mr- md:mt-0  navbar-end">
