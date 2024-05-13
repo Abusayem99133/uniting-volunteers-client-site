@@ -10,6 +10,7 @@ import RequestedPost from "../Pages/MyProfile/RequestedPost";
 import PrivateRoute from "../Shared/PrivateRoute";
 import NeedVolunteer from "../Pages/NeedVolunteer";
 import BeVolunteer from "../Pages/BeVolunteer";
+import ViewDetails from "../Pages/Home/ViewDetails";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/volunteerNeeded"),
       },
       {
         path: "/needVolunteer",
@@ -58,6 +60,12 @@ export const router = createBrowserRouter([
       {
         path: "/beVolunteer/:id",
         element: <BeVolunteer></BeVolunteer>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element: <ViewDetails></ViewDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
       },

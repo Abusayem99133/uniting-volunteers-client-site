@@ -183,6 +183,7 @@ const BeVolunteer = () => {
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
                 name="deadline"
+                defaultValue={deadline}
                 readOnly
               />
             </div>

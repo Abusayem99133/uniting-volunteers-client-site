@@ -12,7 +12,7 @@ const NeedVolunteer = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {volunteers?.map((volunteer) => (
           <div key={volunteer?._id}>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl ">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl">
               <figure>
                 <img src={volunteer?.thumbnail} alt="Shoes" />
               </figure>
