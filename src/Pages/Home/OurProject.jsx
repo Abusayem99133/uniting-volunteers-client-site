@@ -1,4 +1,7 @@
 import donar1 from "../../assets/image/image-1.jpg";
+import donar2 from "../../assets/image/image-2.jpg";
+import donar3 from "../../assets/image/image-3.jpg";
+import donar4 from "../../assets/image/image-4.jpg";
 const OurProject = () => {
   return (
     <div>
@@ -25,7 +28,7 @@ const OurProject = () => {
         </div>
         <div className="p-4">
           <div className="border p-2 card card-compact hover:border-orange-600">
-            <img className="border-b-2 border-orange-600" src={donar1} alt="" />
+            <img className="border-b-2 border-orange-600" src={donar2} alt="" />
             <h2 className="text-2xl mb-3">Help for education of kids</h2>
             <p>
               If you think Okoa does a lot, you are right. What began as a dream
@@ -42,7 +45,7 @@ const OurProject = () => {
         </div>
         <div className="p-4">
           <div className="border p-2 card card-compact hover:border-orange-600">
-            <img className="border-b-2 border-orange-600" src={donar1} alt="" />
+            <img className="border-b-2 border-orange-600" src={donar3} alt="" />
             <h2 className="text-2xl mb-3">Spend food in Ughanda</h2>
             <p>
               If you think Okoa does a lot, you are right. What began as a dream
@@ -59,7 +62,7 @@ const OurProject = () => {
         </div>
         <div className="p-4">
           <div className="border p-2 card card-compact hover:border-orange-600">
-            <img className="border-b-2 border-orange-600" src={donar1} alt="" />
+            <img className="border-b-2 border-orange-600" src={donar4} alt="" />
             <h2 className="text-2xl mb-3 ">Spend for houses in</h2>
 
             <p>
