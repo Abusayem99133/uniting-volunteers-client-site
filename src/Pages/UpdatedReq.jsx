@@ -56,10 +56,10 @@ const UpdatedReq = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
             title: "Success!",
-            text: "User Added Successfully",
+            text: "Post Updated Successfully",
             icon: "success",
             confirmButtonText: "Done",
           });
