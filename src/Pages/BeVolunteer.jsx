@@ -32,7 +32,9 @@ const BeVolunteer = () => {
     const volunteer_needed = form.get("volunteer_needed");
     const userName = user.userName;
     const deadline = form.get("deadline");
-    const update = {
+    const suggestion = form.get("suggestion");
+    const status = form.get("status");
+    const requestedPost = {
       thumbnail,
       post_title,
       description,
@@ -42,20 +44,22 @@ const BeVolunteer = () => {
       userName,
       volunteer_needed,
       deadline,
+      suggestion,
+      status,
     };
-    console.log(update);
+    console.log(requestedPost);
     // send data to the server
-    fetch("http://localhost:5000/beVolunteerDetails", {
-      method: "PUT",
+    fetch("http://localhost:5000/requestedVolunteer", {
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(update),
+      body: JSON.stringify(requestedPost),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount) {
+        if (data.insertedId) {
           Swal.fire({
             title: "Success!",
             text: "Requested Updated Successfully",

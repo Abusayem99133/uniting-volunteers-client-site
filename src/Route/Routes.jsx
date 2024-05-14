@@ -11,7 +11,7 @@ import PrivateRoute from "../Shared/PrivateRoute";
 import NeedVolunteer from "../Pages/NeedVolunteer";
 import BeVolunteer from "../Pages/BeVolunteer";
 import ViewDetails from "../Pages/Home/ViewDetails";
-import UpdatedReq from "../Pages/UpdatedReq";
+import UpdatedPost from "../Pages/UpdatedPost";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +61,7 @@ export const router = createBrowserRouter([
       {
         path: "/request",
         element: <RequestedPost></RequestedPost>,
+        loader: () => fetch("http://localhost:5000/reqCollection"),
       },
       {
         path: "/beVolunteer/:id",
@@ -80,7 +81,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updated/:id",
-        element: <UpdatedReq></UpdatedReq>,
+        element: <UpdatedPost></UpdatedPost>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
       },

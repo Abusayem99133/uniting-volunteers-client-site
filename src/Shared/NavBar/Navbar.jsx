@@ -103,7 +103,7 @@ const Navbar = () => {
                   </ul>
                 </details>
               </div>
-              <div className="lg: ">
+              <div className="sm:hidden lg:block ">
                 <div className="form-control w-52">
                   <label className="cursor-pointer label">
                     <span className="label-text"></span>

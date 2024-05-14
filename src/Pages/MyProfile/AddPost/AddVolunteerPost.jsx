@@ -64,14 +64,14 @@ const AddVolunteerPost = () => {
       </Helmet>
 
       <div>
-        <h2 className="text-3xl -mb-24 text-center ">Volunteer Post</h2>
+        <h2 className="text-3xl -mb-8 text-center ">Volunteer Post</h2>
       </div>
       <div
         className=" pt-10 
       hero min-h-screen "
       >
         <form onSubmit={handleAddPost} className="card-body items-center">
-          <div className="flex mx-auto space-x-5 items-center">
+          <div className="flex mx-auto space-x-5 items-center   ">
             <div>
               <div className="form-control">
                 <label className="label">

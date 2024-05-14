@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
-const UpdatedReq = () => {
+const UpdatedPost = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
   const [updatedPost, setUpdatedPost] = useState({});
@@ -223,4 +223,4 @@ const UpdatedReq = () => {
   );
 };
 
-export default UpdatedReq;
+export default UpdatedPost;
