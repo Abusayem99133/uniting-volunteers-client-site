@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/image/login-img.jpg";
 import { Helmet } from "react-helmet-async";
 import { useContext, useState } from "react";
@@ -7,8 +7,11 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
   const handleRegister = (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -27,6 +30,8 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        updateUserProfile(name, photo).then(() => {});
+        navigate(from);
         const user = result.user;
         console.log(user);
       })
