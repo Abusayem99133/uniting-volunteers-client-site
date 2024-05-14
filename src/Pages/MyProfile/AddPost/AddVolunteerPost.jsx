@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const AddVolunteerPost = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
+  console.log(user);
   const handleAddPost = (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);

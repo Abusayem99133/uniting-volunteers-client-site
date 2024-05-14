@@ -62,7 +62,6 @@ const NeedVolunteer = () => {
           </div>
         ))}
       </div>
-      <h2>hlw volunteer need</h2>
     </div>
   );
 };

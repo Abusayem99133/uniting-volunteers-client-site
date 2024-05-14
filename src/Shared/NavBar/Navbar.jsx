@@ -93,7 +93,7 @@ const Navbar = () => {
           </ul>
           <div className="">
             <details className="dropdown">
-              <summary className="m-1 border-2 py-2 px-4 rounded-md border-sky-500 hover:bg-sky-500 text-white">
+              <summary className="m-1 py-2 px-4 rounded-md  hover:bg-sky-500 text-white">
                 My Profile
               </summary>
               <ul className="p-2 shadow menu dropdown-content z-[10] bg-[#0f172a] rounded-box w-52">
