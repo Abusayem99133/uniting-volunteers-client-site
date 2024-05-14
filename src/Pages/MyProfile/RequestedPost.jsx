@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { NavLink, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const RequestedPost = () => {
   const items = useLoaderData();
@@ -39,11 +39,11 @@ const RequestedPost = () => {
                 <td>{item.deadline}</td>
 
                 {
-                  <NavLink to={`/details/${item?._id}`}>
+                  <Link>
                     <button className="btn bg-purple-400 font-bold">
                       Cancel
                     </button>
-                  </NavLink>
+                  </Link>
                 }
               </tr>
             ))}

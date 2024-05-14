@@ -9,7 +9,7 @@ const MyPost = () => {
   const { user } = useContext(AuthContext);
   const [myPost, setMyPost] = useState([]);
   const [myPostDelete, setMyPostDelete] = useState(false);
-  // const [deleteItem, setMyPostDelete] = useState(false);
+
   useEffect(() => {
     fetch(`http://localhost:5000/volunteering/${user?.email}`)
       .then((res) => res.json())
@@ -18,7 +18,7 @@ const MyPost = () => {
         setMyPost(data);
       });
   }, [user, myPostDelete]);
-  console.log(myPost);
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
