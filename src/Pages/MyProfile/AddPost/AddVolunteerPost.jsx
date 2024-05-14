@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddVolunteerPost = () => {
   const { user } = useContext(AuthContext);
@@ -58,6 +59,9 @@ const AddVolunteerPost = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>AddVolunteer-Page</title>
+      </Helmet>
       <form onSubmit={handleAddPost} className="card-body">
         <div className="flex mx-auto space-x-5">
           <div>

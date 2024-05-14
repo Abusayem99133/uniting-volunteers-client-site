@@ -3,10 +3,12 @@ import { AuthContext } from "../../Provider/AuthProvider";
 // import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyPost = () => {
   const { user } = useContext(AuthContext);
   const [myPost, setMyPost] = useState([]);
+  const [myPostDelete, setMyPostDelete] = useState(false);
   // const [deleteItem, setMyPostDelete] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/volunteering/${user?.email}`)
@@ -15,7 +17,7 @@ const MyPost = () => {
         console.log(data);
         setMyPost(data);
       });
-  }, []);
+  }, [user, myPostDelete]);
   console.log(myPost);
   const handleDelete = (id) => {
     Swal.fire({
@@ -48,6 +50,9 @@ const MyPost = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>MyPost-Page</title>
+      </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {myPost?.map((post) => (
           <div key={post._id}>
