@@ -57,7 +57,7 @@ const MyPost = () => {
         {myPost?.map((post) => (
           <div key={post._id}>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
-              <figure>
+              <figure className="px-10 pt-10">
                 <img src={post?.thumbnail} alt="Shoes" />
               </figure>
               <div className="card-body">

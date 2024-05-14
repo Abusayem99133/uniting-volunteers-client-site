@@ -4,7 +4,7 @@ const NewSection = ({ sec }) => {
   return (
     <div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure>
+        <figure className="px-10 pt-10">
           <img src={sec?.thumbnail} alt="Shoes" />
         </figure>
         <div className="card-body">
