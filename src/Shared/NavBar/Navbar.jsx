@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/volunteer">Need Volunteer</Link>
+        <Link to="/needVolunteer">Need Volunteer</Link>
       </li>
       <li>
         <Link to="/login">Login</Link>
@@ -58,6 +58,63 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-[#0f172a] rounded-box w-52 text-white"
             >
               {navItems}
+              <div className="">
+                <details className="dropdown">
+                  <summary className="m-1 py-2 px-4 rounded-md  hover:bg-sky-500 text-white">
+                    My Profile
+                  </summary>
+                  <ul className="p-2 shadow menu dropdown-content z-[10] bg-[#0f172a] rounded-box w-52">
+                    <li>
+                      <NavLink
+                        to="/addPost"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "  border-2 border-sky-500 hover:bg-sky-500 font-bold text-white "
+                            : "font-bold text-white"
+                        }
+                      >
+                        Add Volunteer Post
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/myPost"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "  border-2 border-sky-500 hover:bg-sky-500 font-bold text-white "
+                            : "font-bold text-white"
+                        }
+                      >
+                        My Post
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/request"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "  border-2 border-sky-500 hover:bg-sky-500 font-bold text-white "
+                            : "font-bold text-white"
+                        }
+                      >
+                        Requested Post
+                      </NavLink>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+              <div className="lg: ">
+                <div className="form-control w-52">
+                  <label className="cursor-pointer label">
+                    <span className="label-text"></span>
+                    <input
+                      type="checkbox"
+                      className="toggle toggle-secondary "
+                      onChange={handleToggle}
+                    />
+                  </label>
+                </div>
+              </div>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl text-white">Uniting Volunteers</a>
@@ -138,12 +195,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="mt-20 -ml-5  md:ml-0 md:-mr- md:mt-0  navbar-end">
-          <div className="form-control w-52">
+          <div className="form-control w-52 ">
             <label className="cursor-pointer label">
               <span className="label-text"></span>
               <input
                 type="checkbox"
-                className="toggle toggle-secondary"
+                className="toggle toggle-secondary "
                 onChange={handleToggle}
               />
             </label>

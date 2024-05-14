@@ -42,8 +42,11 @@ const Register = () => {
       <Helmet>
         <title>Register-page</title>
       </Helmet>
-      <div className="flex w-full p-5 bg-blue-600 items-center">
-        <div className="w-1/2">
+      <div className="md:flex w-full p-5 bg-blue-600 items-center">
+        <div className="md:w-1/2">
+          <img src={login} alt="" />
+        </div>
+        <div className="md:w-1/2">
           <form onSubmit={handleRegister} className="card-body">
             <h1 className="text-4xl text-white text-center shadow-sm">
               Register Now
@@ -97,7 +100,7 @@ const Register = () => {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="ml-96 -mt-8"
+                className="ml-60 md:ml-96 -mt-8"
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
@@ -114,9 +117,6 @@ const Register = () => {
             <hr />
             <h2 className="text-white text-center ">Or SignIn</h2>
           </form>
-        </div>
-        <div className="w-1/2">
-          <img src={login} alt="" />
         </div>
       </div>
       <Toaster />

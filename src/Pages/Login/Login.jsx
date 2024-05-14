@@ -41,8 +41,11 @@ const Login = () => {
       <Helmet>
         <title>Login-Page</title>
       </Helmet>
-      <div className="flex w-full p-5 bg-blue-600">
-        <div className="w-1/2">
+      <div className=" md:flex w-full p-5 bg-blue-600">
+        <div className="md:w-1/2">
+          <img src={login} alt="" />
+        </div>
+        <div className="md:w-1/2">
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -69,7 +72,7 @@ const Login = () => {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="ml-96 -mt-8"
+                className="ml-60 md:ml-96 -mt-8"
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
@@ -99,9 +102,6 @@ const Login = () => {
               </span>
             </div>
           </form>
-        </div>
-        <div className="w-1/2">
-          <img src={login} alt="" />
         </div>
       </div>
     </div>

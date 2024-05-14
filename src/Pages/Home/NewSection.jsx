@@ -23,7 +23,9 @@ const NewSection = ({ sec }) => {
           <div className="card-actions justify-end">
             <Link to={`/details/${sec?._id}`}>
               {" "}
-              <button className="btn btn-primary">View Details</button>
+              <button className="btn btn-primary sm:text-center">
+                View Details
+              </button>
             </Link>
           </div>
         </div>

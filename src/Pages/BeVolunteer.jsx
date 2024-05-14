@@ -66,10 +66,15 @@ const BeVolunteer = () => {
       });
   };
   return (
-    <div>
+    <div className="bg-orange-400">
       <Helmet>
         <title>BeVolunteer-Page</title>
       </Helmet>
+      <div>
+        <h1 className="text-center  -mb-6 text-3xl text-white p-3">
+          BeVolunteer Requested
+        </h1>
+      </div>
       <form onSubmit={handleUpdate} className="card-body">
         <div className="flex mx-auto space-x-5">
           <div>
