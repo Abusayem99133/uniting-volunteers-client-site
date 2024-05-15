@@ -49,13 +49,16 @@ const BeVolunteer = () => {
     };
     console.log(requestedPost);
     // send data to the server
-    fetch("http://localhost:5000/requestedVolunteer", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(requestedPost),
-    })
+    fetch(
+      "https://b9a11-server-side-abusayem99133.vercel.app/requestedVolunteer",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(requestedPost),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

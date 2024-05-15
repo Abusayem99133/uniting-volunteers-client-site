@@ -1,16 +1,15 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-neutral text-neutral-content">
+      <footer className="footer footer-center p-10 bg-primary text-primary-content">
         <aside>
-          <p>
-            Volunteer Team
+          <p className="font-bold">
             <br />
-            Providing This Site since 2024
+            Providing reliable tech since 1992
           </p>
+          <p>Copyright © 2024 - All right reserved</p>
         </aside>
         <nav>
-          <h6 className="footer-title">Social</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg

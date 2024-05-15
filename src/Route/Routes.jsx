@@ -22,7 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/volunteerNeeded"),
+        loader: () =>
+          fetch(
+            "https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded"
+          ),
       },
       {
         path: "/needVolunteer",
@@ -31,7 +34,10 @@ export const router = createBrowserRouter([
             <NeedVolunteer></NeedVolunteer>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/volunteerNeeded"),
+        loader: () =>
+          fetch(
+            "https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded"
+          ),
       },
       {
         path: "/login",
@@ -61,13 +67,15 @@ export const router = createBrowserRouter([
       {
         path: "/request",
         element: <RequestedPost></RequestedPost>,
-        // loader: () => fetch("http://localhost:5000/reqCollection"),
+        // loader: () => fetch("https://b9a11-server-side-abusayem99133.vercel.app/reqCollection"),
       },
       {
         path: "/beVolunteer/:id",
         element: <BeVolunteer></BeVolunteer>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
+          fetch(
+            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
@@ -77,13 +85,17 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
+          fetch(
+            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
+          ),
       },
       {
         path: "/updated/:id",
         element: <UpdatedPost></UpdatedPost>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
+          fetch(
+            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
+          ),
       },
     ],
   },

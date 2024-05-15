@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
 
       // if (currentUser) {
       //   axios
-      //     .post("http://localhost:5000/jwt", loggedUser, {
+      //     .post("https://b9a11-server-side-abusayem99133.vercel.app/jwt", loggedUser, {
       //       withCredentials: true,
       //     })
       //     .then((res) => {
@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
       //     });
       // } else {
       //   axios
-      //     .post("http://localhost:5000/logout", loggedUser, {
+      //     .post("https://b9a11-server-side-abusayem99133.vercel.app/logout", loggedUser, {
       //       withCredentials: true,
       //     })
       //     .then((res) => {

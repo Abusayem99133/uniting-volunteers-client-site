@@ -13,7 +13,7 @@ import {
 const GroupOfVolunteers = () => {
   return (
     <div>
-      <h2 className="text-3xl mb-3">Our group of Volunteers</h2>
+      <h2 className="text-3xl mb-3 text-orange-400">Our group of Volunteers</h2>
       <hr />
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8">

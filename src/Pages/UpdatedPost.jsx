@@ -11,7 +11,9 @@ const UpdatedPost = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/singleVolunteer/${id}`)
+    fetch(
+      `https://b9a11-server-side-abusayem99133.vercel.app/singleVolunteer/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setUpdatedPost(data);
@@ -46,13 +48,16 @@ const UpdatedPost = () => {
     };
     console.log(updatedPost);
     // send data to the server
-    fetch(`http://localhost:5000/updateVolunteer/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedPost),
-    })
+    fetch(
+      `https://b9a11-server-side-abusayem99133.vercel.app/updateVolunteer/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedPost),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

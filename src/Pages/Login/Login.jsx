@@ -25,7 +25,7 @@ const Login = () => {
         // console.log(loggedInUser);
         // const user = { email };
         // axios
-        //   .post("http://localhost:5000/jwt", user, { withCredentials: true })
+        //   .post("https://b9a11-server-side-abusayem99133.vercel.app/jwt", user, { withCredentials: true })
         //   .then((res) => {
         //     console.log(res.data);
         //   });
