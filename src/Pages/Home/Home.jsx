@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import NewSection from "./NewSection";
 import OurProject from "./OurProject";
 import GroupOfVolunteers from "./GroupOfVolunteers";
 import { Helmet } from "react-helmet-async";
+import { FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
   const newSec = useLoaderData();
@@ -27,6 +28,16 @@ const Home = () => {
       </div>
       <div className="mt-12">
         <GroupOfVolunteers></GroupOfVolunteers>
+      </div>
+      <div className="text-center">
+        <Link to="/needVolunteer" className="">
+          <button
+            className="btn btn-secondary 
+      "
+          >
+            See All <FaArrowRight />
+          </button>
+        </Link>
       </div>
     </div>
   );

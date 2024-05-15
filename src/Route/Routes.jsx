@@ -22,10 +22,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>
-          fetch(
-            "https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded"
-          ),
+        loader: () => fetch("http://localhost:5000/volunteerNeeded"),
       },
       {
         path: "/needVolunteer",
@@ -34,10 +31,7 @@ export const router = createBrowserRouter([
             <NeedVolunteer></NeedVolunteer>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            "https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded"
-          ),
+        loader: () => fetch("http://localhost:5000/volunteerNeeded"),
       },
       {
         path: "/login",
@@ -67,15 +61,13 @@ export const router = createBrowserRouter([
       {
         path: "/request",
         element: <RequestedPost></RequestedPost>,
-        // loader: () => fetch("https://b9a11-server-side-abusayem99133.vercel.app/reqCollection"),
+        // loader: () => fetch("http://localhost:5000/reqCollection"),
       },
       {
         path: "/beVolunteer/:id",
         element: <BeVolunteer></BeVolunteer>,
         loader: ({ params }) =>
-          fetch(
-            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
-          ),
+          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
       },
       {
         path: "/details/:id",
@@ -85,17 +77,13 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
-          ),
+          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
       },
       {
         path: "/updated/:id",
         element: <UpdatedPost></UpdatedPost>,
         loader: ({ params }) =>
-          fetch(
-            `https://b9a11-server-side-abusayem99133.vercel.app/volunteerNeeded/${params.id}`
-          ),
+          fetch(`http://localhost:5000/volunteerNeeded/${params.id}`),
       },
     ],
   },

@@ -1,12 +1,10 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-center p-10 bg-primary text-primary-content">
+      <footer className="footer footer-center p-10 bg-black text-primary-content">
         <aside>
-          <p className="font-bold">
-            <br />
-            Providing reliable tech since 1992
-          </p>
+          <h2 className="text-3xl font-bold">Uniting Volunteer</h2>
+
           <p>Copyright © 2024 - All right reserved</p>
         </aside>
         <nav>

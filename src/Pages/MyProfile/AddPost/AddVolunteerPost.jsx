@@ -37,7 +37,7 @@ const AddVolunteerPost = () => {
     };
     console.log(addPost);
     // send data to the server
-    fetch("https://b9a11-server-side-abusayem99133.vercel.app/volunteers", {
+    fetch("http://localhost:5000/volunteers", {
       method: "POST",
       headers: {
         "content-type": "application/json",

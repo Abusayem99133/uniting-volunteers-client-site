@@ -33,7 +33,6 @@ const BeVolunteer = () => {
     const userName = user.userName;
     const deadline = form.get("deadline");
     const suggestion = form.get("suggestion");
-    const status = form.get("status");
     const requestedPost = {
       thumbnail,
       post_title,
@@ -45,20 +44,16 @@ const BeVolunteer = () => {
       volunteer_needed,
       deadline,
       suggestion,
-      status,
     };
     console.log(requestedPost);
     // send data to the server
-    fetch(
-      "https://b9a11-server-side-abusayem99133.vercel.app/requestedVolunteer",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(requestedPost),
-      }
-    )
+    fetch("http://localhost:5000/requestedVolunteer", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(requestedPost),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -153,19 +148,6 @@ const BeVolunteer = () => {
                 required
               />
             </div>
-            <div>
-              <label className="label">
-                {" "}
-                <span className="label-text">Status</span>
-              </label>
-              <input
-                className="input input-bordered focus:outline-sky-500"
-                type="text"
-                name="status"
-                placeholder="Requested"
-                required
-              />
-            </div>
           </div>
           {/* right */}
           <div>
@@ -228,20 +210,20 @@ const BeVolunteer = () => {
                 required
               />
             </div>
-            <div>
-              <label className="label">
-                {" "}
-                <span className="label-text">Suggestion</span>
-              </label>
-              <input
-                className="input-bordered input focus:outline-sky-500"
-                type="text"
-                placeholder="Your Suggestion"
-                name="suggestion"
-                required
-              />
-            </div>
           </div>
+        </div>
+        <div className="items-center text-center w-full">
+          <label className="label">
+            {" "}
+            <span className="label-text">Suggestion</span>
+          </label>
+          <input
+            className="input-bordered input focus:outline-sky-500"
+            type="text"
+            placeholder="Your Suggestion"
+            name="suggestion"
+            required
+          />
         </div>
 
         <div className="form-control">
