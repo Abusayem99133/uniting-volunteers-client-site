@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
       {
         path: "/request",
         element: <RequestedPost></RequestedPost>,
-        loader: () => fetch("http://localhost:5000/reqCollection"),
+        // loader: () => fetch("http://localhost:5000/reqCollection"),
       },
       {
         path: "/beVolunteer/:id",

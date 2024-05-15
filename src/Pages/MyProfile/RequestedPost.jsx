@@ -1,20 +1,58 @@
 // import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const RequestedPost = () => {
-  const items = useLoaderData();
-  console.log(items);
-  // const {reqItems, setReqItems} = useState([])
-  // useEffect(()=>{
-  //   fetch('')
-  // },[])
+  // const items = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const [myPost, setMyPost] = useState([]);
+  const [myPostDelete, setMyPostDelete] = useState(false);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reqVolunteering/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMyPost(data);
+      });
+  }, [user, myPostDelete]);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to delete this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/volunteerDelete/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              setMyPostDelete(true);
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <Helmet>
         <title>RequestedPost-Page</title>
       </Helmet>
-      <h1>Requested Post</h1>
+
       <div className=" overflow-x-auto">
         <table className="table table-xs">
           <thead>
@@ -30,7 +68,7 @@ const RequestedPost = () => {
             </tr>
           </thead>
           <tbody>
-            {items?.map((item, index) => (
+            {myPost?.map((item, index) => (
               <tr key={index}>
                 <td>{`${index + 1}`}</td>
                 <td>{item.post_title}</td>
@@ -38,13 +76,12 @@ const RequestedPost = () => {
                 <td>{item.status}</td>
                 <td>{item.deadline}</td>
 
-                {
-                  <Link>
-                    <button className="btn bg-purple-400 font-bold">
-                      Cancel
-                    </button>
-                  </Link>
-                }
+                <button
+                  onClick={() => handleDelete(item?._id)}
+                  className="btn bg-purple-400 font-bold"
+                >
+                  Cancel
+                </button>
               </tr>
             ))}
           </tbody>

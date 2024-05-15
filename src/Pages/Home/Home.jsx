@@ -17,7 +17,7 @@ const Home = () => {
       <div className="mt-12">
         <h2 className="text-3xl mb-3 text-orange-400">New Section</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {newSec?.map((sec) => (
+          {newSec?.slice(0 - 6)?.map((sec) => (
             <NewSection key={sec._id} sec={sec}></NewSection>
           ))}
         </div>

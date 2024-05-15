@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const NewSection = ({ sec }) => {
   return (
     <div>
@@ -33,5 +33,7 @@ const NewSection = ({ sec }) => {
     </div>
   );
 };
-
+NewSection.propTypes = {
+  sec: PropTypes.object,
+};
 export default NewSection;
