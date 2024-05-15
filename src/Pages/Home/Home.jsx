@@ -32,7 +32,7 @@ const Home = () => {
       <div className="text-center">
         <Link to="/needVolunteer" className="">
           <button
-            className="btn btn-secondary 
+            className="btn btn-outline 
       "
           >
             See All <FaArrowRight />

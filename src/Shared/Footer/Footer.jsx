@@ -3,7 +3,7 @@ const Footer = () => {
     <div>
       <footer className="footer footer-center p-10 bg-black text-primary-content">
         <aside>
-          <h2 className="text-3xl font-bold">Uniting Volunteer</h2>
+          <h2 className="text-3xl font-bold">Uniting Volunteers</h2>
 
           <p>Copyright © 2024 - All right reserved</p>
         </aside>

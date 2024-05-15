@@ -9,7 +9,7 @@ const NeedVolunteer = () => {
       <Helmet>
         <title>NeedVolunteer-Page</title>
       </Helmet>
-      <h2 className="text-red-700 btn btn-outline">hlw world</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {volunteers?.map((volunteer) => (
           <div key={volunteer?._id}>
