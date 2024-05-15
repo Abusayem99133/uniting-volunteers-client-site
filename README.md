@@ -1,8 +1,14 @@
-# React + Vite
+Website Name: Uniting Volunteers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<hr/>
+Website Live link: https://uniting-volunteer-project.web.app/
+<hr/>
+<li>Clearly articulate the mission and vision of Uniting Volunteers</li>
 
-Currently, two official plugins are available:
+<li>Provide concise instructions on how volunteers can join the platform,</li>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<li>Highlight key features and functionalities of the platform</li>
+
+<li>Offer resources and support channels available to volunteers,</li>
+
+<li>Outline the expected behavior and code of conduct for volunteers on the platform,</li>
